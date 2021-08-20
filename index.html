@@ -117,7 +117,7 @@
 	
 	// Create a popup, but don't add it to the map yet.
 	const popup = new mapboxgl.Popup({
-	closeButton: true,
+	closeButton: false,
 	closeOnClick: false
 	});
 
@@ -143,7 +143,7 @@
 	popup.setLngLat(coordinates).setHTML('<strong>' + name + '</strong><P> Download the report <a href=' + pdfurl + '>here</a></p>').addTo(map);
 	});
 
-	map.on('mouseleave', 'places', () => {
+	map.on('mouseleave', 'Nexus-markers-layer', () => {
 	map.getCanvas().style.cursor = '';
 	popup.remove();
 	});
